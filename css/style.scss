@@ -1,0 +1,613 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200&display=swap');
+*{
+    font-family: 'Nunito', sans-serif ;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    text-decoration: none;
+}
+
+$carrot-color:#e67e22;
+$black:#130f40;
+$white:#fff;
+$light-color:#666;
+$light-bg:#eee;
+$border:.2rem solid $black;
+$box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+
+
+
+@mixin form-btn {
+    width: 100%;
+    text-align: center;
+
+    &:hover{
+        background: $black;
+    }
+    
+}
+
+
+@mixin white-btn {
+    color:$white;
+    border-color: $white;
+  
+    &:hover{
+      color:$black;
+    }
+  
+    &::before{
+      background:$white;
+    }
+  }
+
+
+
+
+
+.heading{
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 3.5rem;
+    color: $black;
+
+    span{
+        color:$carrot-color;
+    }
+}
+
+.btn{
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .8rem 1.8rem;
+    border-radius: 5rem;
+    border-top-left-radius: 0;
+    border: $border;
+    cursor:pointer;
+    background: none;
+    color: $black;
+    font-size: 1rem;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top:0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $black;
+        z-index: -1;
+        transition: .2s linear;
+        clip-path: circle(0% at 0% 5%) ;
+    }
+
+    &:hover::before{
+        clip-path: circle(100%);
+
+    }
+
+    &:hover{
+        color: #fff;
+    }
+}
+
+
+.header{
+    background: $white;
+   
+    
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: $box-shadow;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+    
+
+    .logo{
+        font-size: 2.5rem;
+        color:$black;
+        font-weight: bolder;
+
+        i{
+            color: $carrot-color;
+        }
+
+    }
+
+    .navbar-nav a{
+        margin: 0 1rem;
+        font-size: 1rem;
+        color: $light-color;
+
+        &:hover{
+            color: $carrot-color;
+        }
+
+    }
+
+      .navbar .navbar-nav .nav-item .nav-link a
+        {
+            margin: 0 1rem;
+            font-size: 1rem;
+            color: $light-color;
+    
+            &:hover{
+                color: $carrot-color;
+            }
+    
+        }
+    
+
+    .icons a,
+    .icons div{
+        font-size: 1.5rem;
+        margin-left: .5rem;
+        color: $black;
+        cursor: pointer;
+
+        &:hover{
+            color: $carrot-color;
+        }
+    }
+    
+}
+
+
+
+@keyframes fadeIn{
+    0%{
+        transform: translateY(3rem);
+        opacity: 0;
+    }
+}
+
+
+.home{
+    min-height: 100vh;
+    
+    align-items: center;
+    justify-content: flex-end;
+    background: url(../image/home_bg_img.jpg)no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    .content{
+
+
+        width: 40rem;
+        margin-top: 20rem;
+        margin-left: 30rem;
+
+       
+    }
+
+    h3{
+        font-size: 3rem;
+        color: $white;
+        padding-bottom: .5rem;
+       
+    }
+
+    span{
+        color: $carrot-color;
+    }
+
+    .btn{
+        @include white-btn()
+    }
+
+
+}
+
+.wave{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+}
+.about{
+    margin: 5rem;
+    
+    align-items: center;
+
+    
+
+    .image{
+        
+
+        img{
+            width: 100%;
+        }
+    }
+
+   
+
+    .content{
+
+        padding-left: 10rem;
+
+       
+        h3{
+            color:$black;
+            font-size: 3rem;
+
+            span{
+                color: $carrot-color;
+            }
+        }
+
+        p{
+            font-size: 1rem;
+            color:$light-color;
+            padding: 2rem 0;
+            line-height: 2;
+
+        }
+
+        
+
+    }
+
+}
+
+.cat-food,
+.dog-food{
+
+    margin: 2rem 0;
+  
+    align-items: center;
+    
+    .image{
+
+        padding: 0;
+        margin: 0;
+
+        
+        img{
+            width: 100%;
+        }
+    }
+
+    .content{
+        
+        text-align: center;
+
+        padding: 2rem;
+        
+        h3{
+            font-size: 2.5rem;
+            color: $black;
+            span{
+                color: $carrot-color;
+            }
+        }
+
+        p{
+            padding: .5rem 0;
+            line-height: 2;
+            color: $light-color;
+            font-size: 1rem;
+        }
+        .amount{
+            font-size: 1.5rem;
+            color: $black;
+            padding: 1rem 0;
+        }
+
+        a{
+            img{
+                height: 10rem;
+                margin-top: 1rem;
+                right: 2rem;
+            }
+
+            &:hover img{
+                transform: rotate(15deg);
+            }
+        }  
+    }
+
+}
+
+.shop .box-container{
+
+    margin-top: 1rem;
+    padding: 2rem;
+   
+    .box{
+        position: relative;
+        overflow: hidden;
+
+        &:hover{
+            .image img{
+                transform: scale(1.1);
+            }
+
+            .icons{
+                transform: translateX(0rem);
+            }
+        }
+
+        .image{
+            height: 30rem;
+            width: 100%;
+            overflow: hidden;
+
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .icons{
+            position: absolute;
+            top:1rem;
+            right: 2rem;
+            z-index: 10;
+            transform: translateX(10rem);
+
+            a{
+                display: block;
+                width: 3rem;
+                height: 3rem;
+                line-height: 3rem;
+                font-size: 2.2rem;
+                margin-top: 1rem;
+                background: $white;
+                color: $black;
+                text-align: center;
+
+                &:hover{
+                    color: $white;
+                    background: $carrot-color;
+                }
+            }
+
+           
+
+           
+        }
+
+        .container{
+            padding: 1rem 0;
+            text-align: center;
+    
+            h3{
+                font-size: 2rem;
+                color: $black;
+                padding-bottom:1rem 0 ;
+            }
+    
+            .amount{
+                font-size: 1.5rem;
+                color: $carrot-color;
+            }
+    
+        }
+
+
+    }
+
+    
+}
+
+
+.services .box-container{
+    margin-top: 1rem;
+    padding: 3rem;
+    
+    
+    .box{
+        background: $light-bg;
+        padding: 2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+        
+        h3{
+            font-size: 1.2rem;
+        }
+
+        &:nth-child(even){
+            border-radius: 79% 21% 81% 19% /58% 93% 7% 42%;
+        }
+
+        &:hover{
+            border-radius: .5rem;
+        }
+
+        i{
+            height: 4.5rem;
+            width: 4.5rem;
+            line-height: 4.5rem;
+            font-size: 1.5rem;
+            color:$white;
+            background: $carrot-color;
+            border-radius:50%;
+            margin-bottom: .5rem;
+
+        }
+    }
+} 
+
+.plan .box-container{
+
+    margin: 2rem;
+    padding: 3rem;
+
+    .box{
+      position: relative;
+      padding:2rem;
+      border-radius: .5rem;
+      position: relative;
+      margin-bottom: 2rem;
+      background: $light-bg;
+      margin-left: 1rem;
+  
+      .btn{
+        position: absolute;
+        bottom:-2rem;
+        right:2rem;
+        background: $white;
+      }
+  
+      .title{
+        text-align: center;
+        color:$carrot-color;
+        font-size: 2rem;
+      }
+  
+      .day{
+        text-align: center;
+        color:$black;
+        font-size: 1.5rem;
+      }
+  
+      .icon{
+        color:$carrot-color;
+        font-size: 2rem;
+        padding:1rem 0;
+      }
+  
+      .list{
+        margin:1rem 0;
+  
+        p{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 1rem;
+          color:$light-color;
+          padding:.5rem 0;
+  
+          span{
+            color:$carrot-color;
+          }
+        }
+      }
+  
+      .amount{
+        font-size: 2rem;
+        font-weight: bolder;
+        color:$black;
+  
+        span{
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  .contact{
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:3rem;
+
+    .image{
+       
+
+        img{
+            width: 100%;
+
+        }
+    }
+
+    form{
+       
+        padding: 2rem 7%;
+        .btn{
+            @include form-btn()
+        }
+
+        h3{
+            font-size: 2rem;
+            padding-bottom: 1rem;
+            color: $black;
+        }
+        .box,textarea{
+            width: 100%;
+            border-bottom: $border;
+            border-width: .1rem;
+            font-size: 1rem;
+            text-decoration: none;
+            color:$black;
+            padding: 1rem 0;
+            margin: 1rem 0;
+        }
+
+        textarea{
+            height: 10rem;
+            resize: nobe;
+        }
+    }
+}
+
+.footer{
+    position: relative;
+    background: url(../image/footer_background.jpg) no-repeat;
+    background-position: center;
+    background-size: center;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+  
+    img{
+      position: absolute;
+      top:0; left:0;
+      height:10rem;
+      width:100%;
+    }
+  
+    .share{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap:1.5rem;
+  
+      a{
+        @include white-btn();
+  
+        i{
+          padding-right: .5rem;
+        }
+      }
+    }
+
+    .credit{
+        text-align: center;
+        color:$white;
+        font-size: 2rem;
+        padding:2rem 1rem;
+        margin-top: 2.5rem;
+    
+        span{
+          color:$carrot-color;
+        }
+      }
+}
+
+
+  
+
+ 
+
+    
+
+
+
