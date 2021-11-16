@@ -175,6 +175,7 @@ $box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
 
 
 .home{
+    
     min-height: 100vh;
     
     align-items: center;
@@ -183,6 +184,7 @@ $box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
     background-position: center;
     background-size: cover;
     position: relative;
+    margin-top: 4rem;
 
     .content{
 
@@ -220,7 +222,7 @@ $box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
     height: 12rem;
 }
 .about{
-    margin: 5rem;
+    margin: 5rem 0;
     
     align-items: center;
 
@@ -238,7 +240,7 @@ $box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
 
     .content{
 
-        padding-left: 10rem;
+        padding-left: 5rem;
 
        
         h3{
@@ -408,8 +410,8 @@ $box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
 
 
 .services .box-container{
-    margin-top: 1rem;
-    padding: 3rem;
+    margin: 3rem;
+    padding: 5rem;
     
     
     .box{
@@ -420,6 +422,8 @@ $box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
         border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
         
         h3{
+           
+            margin-bottom: 0;
             font-size: 1.2rem;
         }
 
